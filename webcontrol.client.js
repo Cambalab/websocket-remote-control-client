@@ -6,13 +6,16 @@ export default class WebControl {
       },
       getSpecialNumber: (data) => {
         document.getElementById(this.specialNumberTag).textContent = data.specialNumber
+        // eslint-disable-next-line no-undef
         sessionStorage.setItem('specialNumber', data.specialNumber)
       }
     },
     controller: {
       linkController: (response) => {
         if (response !== 'error') {
+          // eslint-disable-next-line no-undef
           sessionStorage.setItem('specialNumber', response.specialNumber)
+          // eslint-disable-next-line no-undef
           sessionStorage.setItem('widgetOn', true)
           return response
         }
@@ -22,6 +25,7 @@ export default class WebControl {
 
   CUSTOMACTIONS = {
     sendData: (value) => {
+      // eslint-disable-next-line no-undef
       const specialNumber = parseInt(sessionStorage.getItem('specialNumber'), 10)
       this.emit('data', value, this.socket.id, specialNumber)
     }
@@ -60,6 +64,7 @@ export default class WebControl {
   }
 
   getSpecialNumber () {
+    // eslint-disable-next-line no-undef
     return sessionStorage.getItem('specialNumber')
   }
 }
@@ -95,6 +100,7 @@ export class WebControlController extends WebControl {
     })
     socket.on('alreadyLinked', (value) => {
       console.log('alreadyLinked', value)
+      // eslint-disable-next-line no-undef
       value ? sessionStorage.setItem('widgetOn', true) : sessionStorage.setItem('widgetOn', false)
       this.postAlreadyLinkedFunction(value)
     })
