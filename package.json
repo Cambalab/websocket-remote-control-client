@@ -1,0 +1,49 @@
+{
+  "name": "websocket-remote-control-client",
+  "version": "0.0.0",
+  "description": "Client-side of Websocket-remote-control, a library to link two devices and exchange info.",
+  "main": "index.js",
+  "scripts": {
+    "lint": "./node_modules/.bin/eslint .",
+    "build": "rollup -c --environment INCLUDE_DEPS,BUILD:production",
+    "prepublish": "npm run build",
+    "publish": "git push origin --tags && git push origin",
+    "release:major": "npm version major && npm publish",
+    "release:minor": "npm version minor && npm publish",
+    "release:patch": "npm version patch && npm publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Cambalab/websocket-remote-control-client"
+  },
+  "author": "Camba <info@camba.coop>",
+  "homepage": "https://github.com/Cambalab/websocket-remote-control-client/blob/master/README.md",
+  "bugs": {
+    "url": "https://github.com/Cambalab/websocket-remote-control-client/issues"
+  },
+  "license": "GPL-3.0",
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ],
+    "plugins": [
+      "@babel/plugin-proposal-class-properties"
+    ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.3",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/plugin-transform-modules-umd": "^7.8.3",
+    "@babel/preset-env": "^7.8.3",
+    "@rollup/plugin-node-resolve": "^7.0.0",
+    "babel-eslint": "^10.0.3",
+    "eslint": "^6.8.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-import": "^2.20.0",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "rollup": "^1.29.1",
+    "rollup-plugin-babel": "^4.3.3"
+  }
+}
