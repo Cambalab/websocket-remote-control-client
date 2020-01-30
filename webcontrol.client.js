@@ -1,5 +1,4 @@
 export default class WebControl {
-  /* eslint-env browser */
   ACTIONS = {
     screen: {
       urlRedirect: (url) => {
