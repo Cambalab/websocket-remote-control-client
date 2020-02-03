@@ -1,2 +1,4 @@
 node_modules
-index.js
+/index.js
+server.cert
+server.key
