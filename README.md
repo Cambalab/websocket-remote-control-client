@@ -1,5 +1,11 @@
 # websocket-remote-control-client
 
+Websockets-remote-control is a JS project that provides two libraries: a client and a
+server that can link two devices through websockets.
+
+- Client (this library)
+- [Server](https://github.com/Cambalab/websocket-remote-control-server)
+
 This library initializes the Websockets client. Here, the `screen` and `controller` 
 features are used. Both parts can be customized with different configurations to take
  advantage of its set of actions.

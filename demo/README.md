@@ -3,6 +3,7 @@
 Requires [openssl](https://www.openssl.org/source/)
 
 ```
+npm install
 npm run install-demos
 npm run demos
 ```
@@ -17,7 +18,7 @@ In the default configuration the examples are running on:
 
 The implementation is found in each example folder in the file: `/src/index.js`
 
-## Demo credits
+**We build our demo over the starter project by**
 
 Author [Joel Hernandez](http://www.lifenautjoe.com/)
 
