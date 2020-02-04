@@ -33,7 +33,9 @@ and import it.
 
 To create a `WebControlScreen` object:
 
-`new WebControlScreen('serverUrl', actions, specialNumberTag);`
+`const WebControlScreen = require('websocket-remote-control-client').WebControlScreen`
+
+`const webControlScreen = new WebControlScreen('serverUrl', actions, specialNumberTag)`
 
 Where serverUrl is the url to the **websockets server**, **actions** is a list of 
 actions, for example, `['urlRedirect']` and `specialNumberTag` is the HTML tag id where the 
@@ -43,7 +45,9 @@ Special Number will be displayed.
 
 To create a `WebControlController` object:
 
-`new WebControlController('serverUrl');`
+`const WebControlController = require('websocket-remote-control-client').WebControlController`
+
+`const webControlController = new WebControlController('serverUrl')`
 
 Where serverUrl is the url to the **websockets server**.
 
