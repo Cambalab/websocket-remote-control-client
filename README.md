@@ -20,6 +20,10 @@ features are used. Both parts can be customized with different configurations to
 
 In the `/demo` folder
 
+<p align="center">
+<img src="demo/demo.gif" alt="demo of the app running" />
+</p>
+
 #### Creation
 
  Socket.io script should be added in every HTML file that uses the library before de body tag is closed.
