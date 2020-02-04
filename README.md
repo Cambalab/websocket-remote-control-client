@@ -1,10 +1,14 @@
-# websockets-remote-control-client
+# websocket-remote-control-client
 
 This library initializes the Websockets client. Here, the `screen` and `controller` 
 features are used. Both parts can be customized with different configurations to take
  advantage of its set of actions.
 
 ### Usage
+
+#### Installation
+
+`npm install websocket-remote-control-client`
 
 #### Creation
 
@@ -64,7 +68,7 @@ The `CUSTOMACTIONS` present are:
  paired.  
 
  - `postAlreadyLinked(function)`: a function executed just after the pairing is done. 
- In our [example](link-to-example), this function is used to show or hide a QR widget.
+ In our [example](https://github.com/Cambalab/websocket-remote-control-client/tree/master/demo), this function is used to show or hide a QR widget.
 
  - `send(value)`: executes the `'sendData'` action with a value (special number).
 
