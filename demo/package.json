@@ -10,10 +10,10 @@
     "install-demo-client-controller-qr": "cd client-controller-qr && npm install",
     "install-demo-client-screen": "cd client-screen && npm install",
     "demos": "run-p \"demo-server\" \"demo-client-screen\" \"demo-client-controller\" \"demo-client-controller-qr\"",
-    "demo-server": "cd demo/server && npm start",
-    "demo-client-controller": "cd demo/client-controller && npm start",
-    "demo-client-controller-qr": "cd demo/client-controller-qr && npm start",
-    "demo-client-screen": "cd demo/client-screen && npm start"
+    "demo-server": "cd server && npm start",
+    "demo-client-controller": "cd client-controller && npm start",
+    "demo-client-controller-qr": "cd client-controller-qr && npm start",
+    "demo-client-screen": "cd client-screen && npm start"
   },
   "repository": {
     "type": "git",
