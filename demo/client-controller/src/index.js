@@ -16,6 +16,7 @@ const widgetOn = (value) => {
   document.getElementById('widget').hidden = !value
   document.getElementById('specialNumber').hidden = value
 }
+// will excute widgetOn() after alreadyLinked() with the returned value as param
 webcontrol.postAlreadyLinked(widgetOn)
 
 /// ///////

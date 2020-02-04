@@ -108,6 +108,7 @@ export class WebControlController extends WebControl {
     this.postAlreadyLinkedFunction = (value) => {}
   }
 
+  // receives a function that will excute after alreadyLinked() with the returned value as param
   postAlreadyLinked (aFunction) {
     this.postAlreadyLinkedFunction = aFunction
   }
