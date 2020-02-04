@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+  <script src="https://localhost:8000/socket.io"></script>
+  <head>
+    <title>Websockets-remote-control - URL input example</title>
+  </head>
+  <body>
+  <h1>URL input controller example</h1>
+
+    <div id="specialNumber">
+        <label> Special Number </label>
+        <input id="specialNumberInput" type="number" min="1000" max="9999" step="1" autocomplete="off"/>
+        <button id="button">Send</button>
+    </div>
+
+    <div id="widget" hidden="true">
+        <label> Widget </label>
+        <br>
+        <button id="useSendUrl" onclick="useSendUrl()">sendUrl</button>
+    </div>
+
+    <div id="sendUrl" hidden="true">
+      <input id="urlValue" type="url"></input>
+      <button onclick="urlRedirect()">Send</button>
+    </div>
+  </body>
+</html>
