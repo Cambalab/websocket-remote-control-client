@@ -16,6 +16,10 @@ features are used. Both parts can be customized with different configurations to
 
 `npm install websocket-remote-control-client`
 
+#### Example
+
+In the `/demo` folder
+
 #### Creation
 
  Socket.io script should be added in every HTML file that uses the library before de body tag is closed.
@@ -74,7 +78,7 @@ The `CUSTOMACTIONS` present are:
  paired.  
 
  - `postAlreadyLinked(function)`: a function executed just after the pairing is done. 
- In our [example](https://github.com/Cambalab/websocket-remote-control-client/tree/master/demo), this function is used to show or hide a QR widget.
+ In our example in the demo folder, this function is used to show or hide a QR widget.
 
  - `send(value)`: executes the `'sendData'` action with a value (special number).
 
