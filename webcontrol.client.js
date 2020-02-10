@@ -120,4 +120,8 @@ export class WebControlController extends WebControl {
   send (value) {
     this.customActions('sendData')(value)
   }
+
+  unpair (numberValue) {
+    this.socket.emit('unpair', parseInt(numberValue, 10), this.socket.id)
+  }
 }
