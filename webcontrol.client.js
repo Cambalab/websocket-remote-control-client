@@ -15,6 +15,8 @@ export default class WebControl {
           sessionStorage.setItem('specialNumber', response.specialNumber)
           sessionStorage.setItem('widgetOn', true)
           return response
+        } else {
+          sessionStorage.clear()
         }
       }
     }
