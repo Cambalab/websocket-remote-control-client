@@ -124,4 +124,15 @@ export class WebControlController extends WebControl {
   unpair (numberValue) {
     this.socket.emit('unpair', parseInt(numberValue, 10), this.socket.id)
   }
+
+  // the function 'func' is to execute an action after receiving the
+  // 'unpairController' event. If no argument is passed, then 'func' is
+  // used as an empty function and therefore has no effect
+  unpairController (func = () => {}) {
+    this.socket.on('unpairController', () => {
+      sessionStorage.clear()
+      sessionStorage.setItem('widgetOn', false)
+      func()
+    })
+  }
 }

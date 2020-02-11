@@ -34,5 +34,13 @@ function urlRedirect () {
   const value = document.getElementById('urlValue').value
   webcontrol.send(value)
 }
+
+function unpair () {
+  webcontrol.unpair(document.getElementById('specialNumberInput').value)
+  webcontrol.unpairController(widgetOn(false))
+}
+
+
 window.urlRedirect = urlRedirect
 window.useSendUrl = useSendUrl
+window.unpair = unpair
