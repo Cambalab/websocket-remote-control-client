@@ -3,7 +3,7 @@ require('normalize.css/normalize.css')
 require('./styles/index.scss')
 
 const WebControlController = require('websocket-remote-control-client').WebControlController
-const webcontrol = new WebControlController('https://localhost:8000', ['urlRedirect'])
+const webcontrol = new WebControlController('https://localhost:8000')
 
 function linkController () {
   const specialNumber = document.getElementById('specialNumberInput').value

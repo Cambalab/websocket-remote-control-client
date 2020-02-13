@@ -83,8 +83,8 @@ export class WebControlScreen extends WebControl {
 }
 
 export class WebControlController extends WebControl {
-  constructor (url, type) {
-    super(url, 'controller')
+  constructor (url) {
+    super(url, 'controller', [])
     this.controller()
   }
 
