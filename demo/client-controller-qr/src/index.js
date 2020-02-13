@@ -120,3 +120,9 @@ function stopStreamedVideo (videoElem) {
   videoElem.srcObject = null
   canvasElement.hidden = true
 }
+
+function unpair () {
+  webcontrol.unpair(document.getElementById('specialNumberInput').value)
+  webcontrol.unpairController(widgetOn(false))
+}
+window.unpair = unpair
