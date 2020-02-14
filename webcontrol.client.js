@@ -94,15 +94,8 @@ export class WebControlController extends WebControl {
       socket.emit('alreadyLinked', parseInt(this.getSpecialNumber(), 10), socket.id)
     })
     socket.on('alreadyLinked', (value) => {
-      console.log('alreadyLinked', value)
       value ? sessionStorage.setItem('widgetOn', true) : sessionStorage.setItem('widgetOn', false)
       this.postAlreadyLinkedFunction(value)
-    })
-    socket.on('data', (value) => {
-      console.log('data', value)
-    })
-    socket.on('linkController', (value) => {
-      console.log('linkController', value)
     })
     this.onAction('linkController')
     this.postAlreadyLinkedFunction = (value) => {}
