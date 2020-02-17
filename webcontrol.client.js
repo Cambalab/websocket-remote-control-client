@@ -92,6 +92,7 @@ export class WebControlController extends WebControl {
 
   controller () {
     const socket = this.socket
+    this.saveTabSessionId()
     socket.on('connect', () => {
       socket.emit('alreadyLinked', parseInt(this.getSpecialNumber(), 10), socket.id)
     })
@@ -134,5 +135,15 @@ export class WebControlController extends WebControl {
       sessionStorage.setItem('widgetOn', false)
       func()
     })
+  }
+
+  tabSessionId () {
+    return Math.random().toString(36).substring(2)
+  }
+
+  saveTabSessionId () {
+    if (!sessionStorage.getItem('tabSessionId')) {
+      sessionStorage.setItem('tabSessionId', this.tabSessionId())
+    }
   }
 }
