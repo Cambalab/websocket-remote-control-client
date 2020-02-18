@@ -16,7 +16,7 @@ export default class WebControl {
           sessionStorage.setItem('widgetOn', true)
           return response
         } else {
-          sessionStorage.clear()
+          this.clearControllerStorage()
         }
       }
     }
@@ -131,7 +131,7 @@ export class WebControlController extends WebControl {
   // used as an empty function and therefore has no effect
   unpairController (func = () => {}) {
     this.socket.on('unpairController', () => {
-      sessionStorage.clear()
+      this.clearControllerStorage()
       sessionStorage.setItem('widgetOn', false)
       func()
     })
@@ -149,5 +149,10 @@ export class WebControlController extends WebControl {
     if (!sessionStorage.getItem('tabSessionId')) {
       sessionStorage.setItem('tabSessionId', this.createTabSessionId())
     }
+  }
+
+  clearControllerStorage () {
+    sessionStorage.removeItem('specialNumber')
+    sessionStorage.removeItem('widgetOn')
   }
 }
