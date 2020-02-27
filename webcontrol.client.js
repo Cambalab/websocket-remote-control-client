@@ -16,7 +16,7 @@ export default class WebControl {
           sessionStorage.setItem('widgetOn', true)
           return response
         } else {
-          sessionStorage.clear()
+          this.clearControllerStorage()
         }
       }
     }
@@ -92,8 +92,9 @@ export class WebControlController extends WebControl {
 
   controller () {
     const socket = this.socket
+    this.saveTabSessionId()
     socket.on('connect', () => {
-      socket.emit('alreadyLinked', parseInt(this.getSpecialNumber(), 10), socket.id)
+      socket.emit('alreadyLinked', parseInt(this.getSpecialNumber(), 10), socket.id, this.getTabSessionId())
     })
     socket.on('alreadyLinked', (value) => {
       value ? sessionStorage.setItem('widgetOn', true) : sessionStorage.setItem('widgetOn', false)
@@ -109,12 +110,12 @@ export class WebControlController extends WebControl {
   }
 
   linkController (numberValue) {
-    this.socket.emit('linkController', parseInt(numberValue, 10), this.socket.id)
-    this.alreadyLinked(numberValue)
+    this.socket.emit('linkController', parseInt(numberValue, 10), this.socket.id, this.getTabSessionId())
+    this.alreadyLinked(numberValue, this.getTabSessionId())
   }
 
-  alreadyLinked (numberValue) {
-    this.socket.emit('alreadyLinked', parseInt(numberValue, 10), this.socket.id)
+  alreadyLinked (numberValue, sessionId) {
+    this.socket.emit('alreadyLinked', parseInt(numberValue, 10), this.socket.id, sessionId)
   }
 
   send (value) {
@@ -130,9 +131,28 @@ export class WebControlController extends WebControl {
   // used as an empty function and therefore has no effect
   unpairController (func = () => {}) {
     this.socket.on('unpairController', () => {
-      sessionStorage.clear()
+      this.clearControllerStorage()
       sessionStorage.setItem('widgetOn', false)
       func()
     })
+  }
+
+  createTabSessionId () {
+    return Math.random().toString(36).substring(2)
+  }
+
+  getTabSessionId () {
+    return sessionStorage.getItem('tabSessionId')
+  }
+
+  saveTabSessionId () {
+    if (!sessionStorage.getItem('tabSessionId')) {
+      sessionStorage.setItem('tabSessionId', this.createTabSessionId())
+    }
+  }
+
+  clearControllerStorage () {
+    sessionStorage.removeItem('specialNumber')
+    sessionStorage.removeItem('widgetOn')
   }
 }
