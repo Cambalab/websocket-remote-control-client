@@ -130,7 +130,7 @@ export class WebControlController extends WebControl {
     this.unpairController(func)
   }
 
-  unpairController (func = () => {}) {
+  unpairController (func) {
     this.socket.on('unpairController', () => {
       this.clearControllerStorage()
       sessionStorage.setItem('widgetOn', false)
