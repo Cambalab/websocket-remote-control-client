@@ -90,6 +90,8 @@ The `CUSTOMACTIONS` present are:
 
  - `send(value)`: executes the `'sendData'` action with a value (special number).
 
+ - `'unpair'`: unpairs the current controller from the session. Uses the specialNumber to identify the session. In addition, receives a function to
+ execute changes after the events are done. In the case of our example, the function used hides the widget.
 
 
 
