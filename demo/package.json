@@ -1,0 +1,28 @@
+{
+  "name": "websocket-remote-control",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "install-demos": "run-s \"install-demo-server\" \"install-demo-client-screen\" \"install-demo-client-controller\" \"install-demo-client-controller-qr\"",
+    "install-demo-server": "cd server && ./certificates.sh && npm install",
+    "install-demo-client-controller": "cd client-controller && npm install",
+    "install-demo-client-controller-qr": "cd client-controller-qr && npm install",
+    "install-demo-client-screen": "cd client-screen && npm install",
+    "demos": "run-p \"demo-server\" \"demo-client-screen\" \"demo-client-controller\" \"demo-client-controller-qr\"",
+    "demo-server": "cd server && npm start",
+    "demo-client-controller": "cd client-controller && npm start",
+    "demo-client-controller-qr": "cd client-controller-qr && npm start",
+    "demo-client-screen": "cd client-screen && npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
+  }
+}

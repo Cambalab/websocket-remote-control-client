@@ -1,10 +1,28 @@
-# websockets-remote-control-client
+# websocket-remote-control-client
+
+Websockets-remote-control is a JS project that provides two libraries: a client and a
+server that can link two devices through websockets.
+
+- Client (this library)
+- [Server](https://github.com/Cambalab/websocket-remote-control-server)
 
 This library initializes the Websockets client. Here, the `screen` and `controller` 
 features are used. Both parts can be customized with different configurations to take
  advantage of its set of actions.
 
 ### Usage
+
+#### Installation
+
+`npm install websocket-remote-control-client`
+
+#### Example
+
+In the `/demo` folder
+
+<p align="center">
+<img src="demo/demo.gif" alt="demo of the app running" />
+</p>
 
 #### Creation
 
@@ -19,7 +37,9 @@ and import it.
 
 To create a `WebControlScreen` object:
 
-`new WebControlScreen('serverUrl', actions, specialNumberTag);`
+`const WebControlScreen = require('websocket-remote-control-client').WebControlScreen`
+
+`const webControlScreen = new WebControlScreen('serverUrl', actions, specialNumberTag)`
 
 Where serverUrl is the url to the **websockets server**, **actions** is a list of 
 actions, for example, `['urlRedirect']` and `specialNumberTag` is the HTML tag id where the 
@@ -29,7 +49,9 @@ Special Number will be displayed.
 
 To create a `WebControlController` object:
 
-`new WebControlController('serverUrl');`
+`const WebControlController = require('websocket-remote-control-client').WebControlController`
+
+`const webControlController = new WebControlController('serverUrl')`
 
 Where serverUrl is the url to the **websockets server**.
 
@@ -64,10 +86,12 @@ The `CUSTOMACTIONS` present are:
  paired.  
 
  - `postAlreadyLinked(function)`: a function executed just after the pairing is done. 
- In our [example](link-to-example), this function is used to show or hide a QR widget.
+ In our example in the demo folder, this function is used to show or hide a QR widget.
 
  - `send(value)`: executes the `'sendData'` action with a value (special number).
 
+ - `'unpair'`: unpairs the current controller from the session. Uses the specialNumber to identify the session. In addition, receives a function to
+ execute changes after the events are done. In the case of our example, the function used hides the widget.
 
 
 

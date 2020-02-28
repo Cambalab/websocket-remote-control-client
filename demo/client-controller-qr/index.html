@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+  <script src="https://localhost:8000/socket.io"></script>
+  <head>
+    <title>Websockets-remote-control - QR reader example</title>
+  </head>
+  <body>
+  <h1>QR reader controller example</h1>
+
+    <div id="specialNumber">
+        <label> Special Number </label>
+        <input id="specialNumberInput" type="number" min="1000" max="9999" step="1" autocomplete="off"/>
+        <button id="button">Send</button>
+    </div>
+
+    <div id="widget" hidden="true">
+        <label> Widget </label>
+        <br>
+        <button id="useQr" onclick="useQr()">QR</button>
+        <button id="unpair" onclick="unpair()">unpair</button>
+    </div>
+
+    <div id="qr" hidden="true">
+      <canvas id="canvas" hidden="true"></canvas>
+      <br>
+      <b>Detected QR code: </b>
+      <span id="cam-qr-result">None</span>
+      <br>
+      <div id="permission-error" class="red"></div>
+    </div>
+
+  </body>
+</html>
