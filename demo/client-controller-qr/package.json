@@ -24,7 +24,7 @@
         "jsqr": "^1.2.0",
         "normalize.css": "^8.0.0",
         "socket.io-client": "^2.3.0",
-        "websocket-remote-control-client": "^0.0.1"
+        "websocket-remote-control-client": "0.0.2"
     },
     "devDependencies": {
         "@babel/core": "^7.8.3",
